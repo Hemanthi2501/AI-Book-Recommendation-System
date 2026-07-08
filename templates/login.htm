@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login | The Book Vault 📖</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+📖 The Book Vault
+</div>
+
+<ul>
+
+<li><a href="{{ url_for('home') }}">Home</a></li>
+
+<li><a href="{{ url_for('search') }}">Search</a></li>
+
+<li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+
+</ul>
+
+</nav>
+
+<div class="login-container">
+
+<div class="login-box">
+
+<h1>Welcome Back!</h1>
+
+<h2>Login to Your Account 📚</h2>
+
+<form method="POST">
+
+<input
+type="email"
+name="email"
+placeholder="Email Address"
+required>
+
+<input
+type="password"
+name="password"
+placeholder="Password"
+required>
+
+<button type="submit">
+
+Login
+
+</button>
+
+</form>
+
+<p>
+
+Don't have an account?
+
+<a href="{{ url_for('signup') }}">
+
+Create One
+
+</a>
+
+</p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

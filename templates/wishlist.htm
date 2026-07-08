@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wishlist | The Book Vault 📖</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+📖 The Book Vault
+</div>
+
+<ul>
+
+<li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+
+<li><a href="{{ url_for('search') }}">Search</a></li>
+
+<li><a href="{{ url_for('wishlist') }}">Wishlist</a></li>
+
+<li><a href="{{ url_for('profile') }}">Profile</a></li>
+
+<li><a href="{{ url_for('home') }}">Logout</a></li>
+
+</ul>
+
+</nav>
+
+<section>
+
+<h1 class="section-title">
+
+❤️ My Wishlist
+
+</h1>
+
+<div class="book-container">
+
+{% if books %}
+
+{% for book in books %}
+
+<div class="book-card">
+
+<img src="{{ book.image }}">
+
+<h3>{{ book.title }}</h3>
+
+<p>{{ book.author }}</p>
+
+<p>{{ book.genre }}</p>
+
+<button class="btn">
+
+❤️ Saved
+
+</button>
+
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<h2 style="width:100%; text-align:center;">
+
+Your wishlist is empty ❤️
+
+</h2>
+
+{% endif %}
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 The Book Vault 📖
+
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
